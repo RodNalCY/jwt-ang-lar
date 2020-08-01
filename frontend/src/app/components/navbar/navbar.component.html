@@ -2,8 +2,9 @@
   <div class="container">
       <a class="navbar-brand">Navbar</a>
       <form class="form-inline">
-       <a [routerLink]="['login']"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Login</button></a>
-       <a [routerLink]="['profile']"><button class="btn btn-outline-success my-2 my-sm-0 ml-2" type="button">Profile</button></a>
+       <a [routerLink]="['login']"><button class="btn btn-outline-success my-2 my-sm-0" type="button" *ngIf="!loggedIn"> Login</button></a>
+       <a href="#" (click)="logout($event)" ><button class="btn btn-outline-success my-2 my-sm-0" type="button" *ngIf="loggedIn">logout</button></a>
+       <a [routerLink]="['profile']"><button class="btn btn-outline-success my-2 my-sm-0 ml-2" type="button" *ngIf="loggedIn">Profile</button></a>
       </form>
 </div>
 </nav>
